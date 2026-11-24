@@ -1,0 +1,781 @@
+<!doctype html><html lang="pt-BR"><head><meta charset=utf8><title>Joyelle Joias · Ouro 18k, pedras e pérolas</title><meta name="description" content="Joias em ouro 18k, pedras naturais e pérolas. Atendimento por especialista, envio segurado para todo o Brasil."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta name="description" content="Joias em ouro 18k, pedras naturais e pérolas. Até 12x sem juros, desconto no Pix e envio segurado para todo o Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: faixas verdes de largura total alternando com o creme; conteúdo em coluna de 1240px; loja de página única com rotas por #hash */
+:root{
+  --verde:#123F31; --verde-esc:#0B2C22; --verde-2:#1A4C3C; --verde-linha:#2E6150;
+  --ouro:#D9B66C; --ouro-esc:#7E5F26; --claro:#F3E6C6; --claro-2:#FAF3E2; --nevoa:#D8D3C3;
+  --creme:#FAF8F3; --areia:#EEE9DF; --areia-2:#F2EEE5; --linha:#E4DED1; --campo:#C9C2B2;
+  --tinta:#14231D; --cinza:#55625C; --erro:#9A3412; --ok:#0F5A42; --branco:#FFFFFF;
+  --serif:'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --sans:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--creme);color:var(--tinta);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--verde)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ouro-esc);outline-offset:2px}
+.faixa-verde :focus-visible,.topo :focus-visible,.rodape :focus-visible{outline-color:var(--ouro)}
+h1,h2,h3{text-wrap:balance}
+.serif{font-family:var(--serif);font-weight:500}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.eyebrow{margin:0;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ouro-esc)}
+.faixa-verde .eyebrow{color:var(--ouro)}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border:1px solid transparent;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;background:none;transition:background .2s,color .2s,border-color .2s}
+.btn-ouro{background:var(--ouro);color:var(--verde-esc)}
+.btn-ouro:hover{background:#E6C886}
+.btn-verde{background:var(--verde);color:var(--claro-2)}
+.btn-verde:hover{background:var(--verde-esc)}
+.btn-linha{border-color:var(--verde);color:var(--verde)}
+.btn-linha:hover{background:var(--verde);color:var(--claro-2)}
+.btn-linha-claro{border-color:var(--ouro);color:var(--claro)}
+.btn-linha-claro:hover{background:var(--ouro);color:var(--verde-esc)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.link-ouro{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro-esc);border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* aviso de prévia + faixa de benefícios */
+.previa{background:var(--areia);color:var(--tinta);font-size:12.5px;text-align:center;padding-block:7px}
+.beneficios{background:var(--verde-esc);color:#E9D7AC;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.beneficios .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 40px;padding-block:9px;text-align:center}
+
+/* topo */
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--verde);color:var(--claro);border-bottom:1px solid var(--verde-linha)}
+.topo-linha{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding-block:14px}
+.marca{display:flex;align-items:center;gap:10px;justify-self:center;color:var(--claro-2)}
+.marca-nome{font-family:var(--serif);font-size:30px;letter-spacing:.22em;font-weight:500;line-height:1;padding-left:.22em}
+.topo-acoes{display:flex;justify-content:flex-end;gap:2px}
+.icone-btn{position:relative;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;color:var(--claro);cursor:pointer}
+.icone-btn:hover{color:var(--ouro)}
+.contador{position:absolute;top:5px;right:3px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--ouro);color:var(--verde-esc);font-size:11px;font-weight:600;line-height:18px;text-align:center}
+.nav-cats{overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--verde-linha)}
+.nav-cats::-webkit-scrollbar{display:none}
+.nav-cats ul{list-style:none;margin:0 auto;padding:0;display:flex;justify-content:center;gap:4px 30px;width:max-content;min-width:100%;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.nav-cats a{display:block;padding-block:11px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--claro);border-bottom:1px solid transparent;white-space:nowrap}
+.nav-cats a:hover,.nav-cats a[aria-current="page"]{color:var(--ouro);border-bottom-color:var(--ouro)}
+.topo-esq{display:flex;align-items:center}
+.wa-topo{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--claro);display:inline-flex;align-items:center;gap:8px}
+.wa-topo:hover{color:var(--ouro)}
+@media (max-width:640px){.wa-topo span{display:none}.marca-nome{font-size:24px}.nav-cats ul{justify-content:flex-start}}
+
+/* faixas */
+.faixa-verde{background:var(--verde);color:var(--claro)}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:48px;padding-block:64px 80px}
+.hero-texto{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.hero h1{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.4vw,72px);line-height:1.04;color:var(--claro-2)}
+.hero p.lead{margin:0;max-width:30em;font-size:17px;color:var(--nevoa)}
+.hero-acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero-arte{flex:1 1 420px;min-width:0}
+.hero-arte .moldura{aspect-ratio:4/5;max-width:100%;background:var(--verde-2);border:1px solid var(--verde-linha);display:flex;align-items:center;justify-content:center;overflow:hidden}
+
+.garantias{border-bottom:1px solid var(--linha)}
+.garantias .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding-block:30px}
+.garantia{display:flex;gap:14px;align-items:flex-start}
+.garantia p{margin:0;font-size:13px;color:var(--cinza)}
+.garantia strong{display:block;font-size:14px;color:var(--tinta);font-weight:600}
+
+.secao{padding-block:80px 24px}
+.secao-cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:32px}
+.secao-cab h2{margin:6px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(32px,3.6vw,46px);line-height:1.1}
+.grade-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.cat-card{display:flex;flex-direction:column;gap:12px}
+.cat-card .arte{aspect-ratio:3/4;max-width:100%;background:var(--areia);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:background .25s}
+.cat-card:hover .arte{background:#E6DFD1}
+.cat-card span{font-family:var(--serif);font-size:24px;font-weight:500}
+
+.grade-prod{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:36px 20px}
+.card{display:flex;flex-direction:column;gap:6px}
+.card .arte{position:relative;aspect-ratio:1/1;max-width:100%;background:var(--areia);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px}
+.card .arte svg{transition:transform .4s ease}
+.card:hover .arte svg{transform:scale(1.05)}
+.card .mat{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+.card .nome{font-family:var(--serif);font-size:22px;line-height:1.2;font-weight:500}
+.card .preco{font-size:15px;font-weight:600}
+.card .parc{font-size:13px;color:var(--cinza)}
+.card .add{position:absolute;left:12px;right:12px;bottom:12px;min-height:44px;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
+.card:hover .add,.card .add:focus-visible{opacity:1;transform:none}
+@media (hover:none){.card .add{display:none}}
+
+.assinatura .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-block:88px}
+.assinatura .arte{flex:1 1 400px;min-width:0;aspect-ratio:1/1;max-width:100%;background:var(--verde-2);border:1px solid var(--verde-linha);display:flex;align-items:center;justify-content:center}
+.assinatura .texto{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.assinatura h2{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.4vw,58px);line-height:1.04;color:var(--claro-2)}
+.assinatura p{margin:0;max-width:28em;font-size:17px;color:var(--nevoa)}
+
+.confianca{padding-block:88px}
+.confianca h2{margin:0 0 44px;text-align:center;font-family:var(--serif);font-weight:500;font-size:clamp(32px,3.6vw,46px);line-height:1.1}
+.confianca .grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
+.confianca .item{display:flex;flex-direction:column;gap:10px;border-top:1px solid #C9AE76;padding-top:22px}
+.confianca h3{margin:0;font-size:17px;font-weight:600}
+.confianca p{margin:0;color:var(--cinza)}
+
+.chamada-wa{background:var(--areia)}
+.chamada-wa .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-block:56px}
+.chamada-wa h2{margin:0 0 6px;font-family:var(--serif);font-weight:500;font-size:clamp(28px,3vw,38px);line-height:1.15}
+.chamada-wa p{margin:0;color:var(--cinza)}
+
+.rodape{background:var(--verde-esc);color:#C9C9BC;font-size:14px}
+.rodape .wrap{display:flex;flex-direction:column;gap:44px;padding-block:64px 28px}
+.rodape .cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px}
+.rodape .col{flex:1 1 160px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.rodape .col p.t{margin:0 0 4px;color:var(--claro);font-weight:600}
+.rodape a:hover{color:var(--ouro)}
+.rodape .base{border-top:1px solid #24493C;padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:#A9AFA4}
+.selos{display:flex;flex-wrap:wrap;gap:8px}
+.selo{border:1px solid #2C5446;padding:4px 10px;font-size:11.5px;letter-spacing:.06em}
+
+/* categoria */
+.cab-cat{border-bottom:1px solid var(--linha)}
+.cab-cat .wrap{padding-block:40px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.cab-cat h1{margin:6px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.6vw,58px);line-height:1.05}
+.cab-cat .qtd{margin:4px 0 0;color:var(--cinza);font-size:14px}
+.ordem{display:flex;align-items:center;gap:10px;font-size:14px}
+.ordem select{min-height:44px;padding:0 12px;border:1px solid var(--campo);background:var(--branco)}
+.migalha{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--cinza);padding-block:18px 0}
+.migalha a:hover{color:var(--ouro-esc)}
+
+/* produto */
+.produto{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;padding-block:22px 72px}
+.galeria{flex:1 1 500px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.galeria .principal{aspect-ratio:1/1;max-width:100%;background:var(--areia);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.miniaturas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.miniaturas button{aspect-ratio:1/1;max-width:100%;background:var(--areia);border:1px solid transparent;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.miniaturas button[aria-pressed="true"]{border-color:var(--tinta)}
+.info{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.info h1{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.6vw,46px);line-height:1.08}
+.info .ref{margin:8px 0 0;font-size:13px;color:var(--cinza)}
+.bloco-preco{display:flex;flex-direction:column;gap:3px;padding-block:18px;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.bloco-preco .grande{font-size:30px;font-weight:600;letter-spacing:-.01em}
+.bloco-preco .pix{color:var(--ok);font-weight:500}
+.desc{margin:0;color:var(--cinza);max-width:34em}
+.aros{display:flex;flex-wrap:wrap;gap:8px}
+.aros button{min-width:48px;min-height:48px;padding:0 10px;background:var(--branco);border:1px solid var(--campo);cursor:pointer;font-size:14px}
+.aros button:hover{border-color:var(--tinta)}
+.aros button[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:var(--claro-2)}
+.aviso-erro{font-size:13px;color:var(--erro)}
+.linha-sel{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px}
+.qtd{display:inline-flex;align-items:center;border:1px solid var(--campo);background:var(--branco)}
+.qtd button{width:44px;height:44px;background:none;border:0;cursor:pointer;font-size:18px}
+.qtd span{min-width:28px;text-align:center;font-weight:600}
+.compra{display:flex;flex-direction:column;gap:10px}
+.compra .btn{width:100%;min-height:56px}
+.selos-prod{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;font-size:12px;text-align:center;color:#33413B}
+.selos-prod div{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px;background:var(--areia-2)}
+.calc-frete{display:flex;flex-direction:column;gap:8px}
+.calc-frete .linha{display:flex;gap:8px}
+.campo-in{flex:1 1 auto;min-width:0;min-height:48px;padding:0 14px;border:1px solid var(--campo);background:var(--branco);font-size:15px}
+.campo-in[aria-invalid="true"]{border-color:var(--erro)}
+.resultado-frete{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.resultado-frete div{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--areia-2)}
+.acordeao{border-top:1px solid var(--linha)}
+.acordeao>div{border-bottom:1px solid var(--linha)}
+.acordeao button{width:100%;min-height:56px;display:flex;justify-content:space-between;align-items:center;background:none;border:0;padding:0;font-size:15px;font-weight:600;cursor:pointer;text-align:left}
+.acordeao .corpo{padding-bottom:18px}
+.acordeao .kv{display:flex;justify-content:space-between;gap:16px;padding-block:5px;font-size:14px}
+.acordeao .kv span:first-child{color:var(--cinza)}
+.faixa-info .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:36px;padding-block:64px}
+.faixa-info h2{margin:0 0 8px;font-family:var(--serif);font-weight:500;font-size:28px;color:var(--claro-2)}
+.faixa-info p{margin:0;color:var(--nevoa)}
+
+/* sacola lateral */
+.veu{position:fixed;inset:0;background:rgba(11,44,34,.45);z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
+.veu.aberto{opacity:1;pointer-events:auto}
+.sacola{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--creme);z-index:90;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px);box-shadow:-12px 0 32px rgba(11,44,34,.15)}
+.sacola.aberta{transform:none}
+.sacola:not(.aberta){visibility:hidden;transition:transform .3s ease,visibility 0s .3s}
+.sacola-cab{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--linha)}
+.sacola-cab h2{margin:0;font-family:var(--serif);font-weight:500;font-size:28px}
+.sacola-corpo{flex:1;overflow-y:auto;padding:8px 20px}
+.sacola .icone-btn{color:var(--tinta)}
+.item{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;padding-block:16px;border-bottom:1px solid var(--linha)}
+.item .arte{aspect-ratio:1/1;max-width:100%;background:var(--areia);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.item .nome{font-family:var(--serif);font-size:19px;line-height:1.2;font-weight:500}
+.item .meta{font-size:13px;color:var(--cinza)}
+.item .linha{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
+.item .qtd button{width:36px;height:36px}
+.remover{background:none;border:0;padding:6px 0;font-size:12.5px;color:var(--cinza);text-decoration:underline;cursor:pointer}
+.progresso{padding:14px 20px;background:var(--areia-2);font-size:13px}
+.barra{height:4px;background:var(--linha);margin-top:8px}
+.barra i{display:block;height:100%;background:var(--ouro-esc)}
+.sacola-pe{padding:18px 20px 20px;border-top:1px solid var(--linha);display:flex;flex-direction:column;gap:10px}
+.total-linha{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.total-linha.forte{font-size:17px;font-weight:600}
+.vazia{text-align:center;padding:48px 8px;display:flex;flex-direction:column;align-items:center;gap:16px;color:var(--cinza)}
+
+/* checkout */
+.checkout{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;padding-block:28px 88px}
+.checkout-form{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.etapa{background:var(--branco);border:1px solid var(--linha);padding:24px}
+.etapa h2{margin:0 0 18px;display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:500;font-size:26px}
+.etapa h2 b{width:30px;height:30px;border-radius:50%;background:var(--verde);color:var(--claro-2);font-family:var(--sans);font-size:14px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.campos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.campo{display:flex;flex-direction:column;gap:5px;grid-column:span 6;min-width:0}
+.campo.m3{grid-column:span 3}.campo.m2{grid-column:span 2}.campo.m4{grid-column:span 4}
+@media (max-width:560px){.campo.m3,.campo.m2,.campo.m4{grid-column:span 6}}
+.campo label{font-size:13px;font-weight:600}
+.campo .erro{font-size:12.5px;color:var(--erro);min-height:0}
+.opcoes{display:flex;flex-direction:column;gap:10px}
+.opcao{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--campo);background:var(--branco);cursor:pointer}
+.opcao:has(input:checked){border-color:var(--verde);box-shadow:inset 0 0 0 1px var(--verde)}
+.opcao input{width:18px;height:18px;accent-color:var(--verde);flex:none}
+.opcao .o-txt{flex:1;min-width:0;display:flex;flex-direction:column}
+.opcao .o-txt small{color:var(--cinza);font-size:13px}
+.opcao .o-val{font-weight:600;white-space:nowrap}
+.nota{font-size:13px;color:var(--cinza);margin:0}
+.resumo{flex:1 1 340px;min-width:0;position:sticky;top:calc(env(safe-area-inset-top,0px) + 132px);background:var(--areia-2);padding:24px;display:flex;flex-direction:column;gap:12px}
+.resumo h2{margin:0 0 4px;font-family:var(--serif);font-weight:500;font-size:26px}
+.resumo .mini{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;font-size:14px}
+.resumo .mini .arte{aspect-ratio:1/1;background:var(--areia);display:flex;align-items:center;justify-content:center}
+.resumo hr{border:0;border-top:1px solid var(--linha);margin:6px 0;width:100%}
+@media (max-width:960px){.resumo{position:static}}
+.confirmado{max-width:640px;margin:0 auto;padding-block:72px 96px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center}
+.confirmado h1{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.4vw,52px);line-height:1.08}
+.caixa-aviso{background:var(--areia);padding:16px 18px;font-size:14px;text-align:left}
+
+.wa-flutuante{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:var(--verde);color:var(--ouro);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(11,44,34,.3);z-index:40}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--verde-esc);color:var(--claro-2);padding:12px 20px;font-size:14px;opacity:0;transition:opacity .2s,transform .2s;z-index:100;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.ver{opacity:1;transform:translate(-50%,0)}
+</style>
+
+<div id="previa" class="previa" hidden>Loja em pré-lançamento: catálogo e preços ilustrativos. Pedidos e dúvidas pelo WhatsApp.</div>
+<div class="beneficios"><div class="wrap"><span>Até 12x sem juros</span><span id="ben-pix">5% off no Pix</span><span>Envio segurado para todo o Brasil</span></div></div>
+<header class="topo">
+  <div class="wrap topo-linha">
+    <div class="topo-esq"><a class="wa-topo" data-wa href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg><span>Atendimento</span></a></div>
+    <a class="marca" href="#inicio" aria-label="Joyelle, página inicial"><span data-trevo="22"></span><span class="marca-nome">JOYELLE</span></a>
+    <div class="topo-acoes">
+      <button class="icone-btn" type="button" data-acao="abrir-sacola" aria-label="Abrir sacola"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="contador num" id="contador" hidden>0</span></button>
+    </div>
+  </div>
+  <nav class="nav-cats" aria-label="Categorias"><ul id="nav-cats"></ul></nav>
+</header>
+<main id="app" tabindex="-1"></main>
+<footer class="rodape">
+  <div class="wrap">
+    <div class="cols">
+      <div class="col" style="flex-basis:260px">
+        <a class="marca" href="#inicio" style="justify-self:start;justify-content:flex-start"><span data-trevo="20"></span><span class="marca-nome" style="font-size:24px">JOYELLE</span></a>
+        <p class="eyebrow" style="color:var(--ouro);letter-spacing:.24em;font-size:11.5px">Pedras · Pérolas · Ouro 18k</p>
+      </div>
+      <div class="col"><p class="t">Joias</p><span id="rod-cats" style="display:flex;flex-direction:column;gap:9px"></span></div>
+      <div class="col"><p class="t">Ajuda</p><a href="#ajuda-tamanhos">Guia de tamanhos</a><a href="#ajuda-trocas">Trocas e devoluções</a><a href="#ajuda-cuidados">Cuidados com a joia</a></div>
+      <div class="col" style="flex-basis:220px"><p class="t">Atendimento</p><span id="rod-wa"></span><span id="rod-email"></span><span id="rod-horario"></span><a id="rod-insta" href="#" target="_blank" rel="noopener"></a></div>
+    </div>
+    <div class="base"><span id="rod-cnpj"></span><div class="selos"><span class="selo">Pix</span><span class="selo">Cartão até 12x</span><span class="selo">Compra segura</span></div></div>
+  </div>
+</footer>
+<a class="wa-flutuante" data-wa href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></a>
+<div class="veu" id="veu" data-acao="fechar-sacola"></div>
+<aside class="sacola" id="sacola" role="dialog" aria-modal="true" aria-labelledby="sacola-titulo" aria-hidden="true"></aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script id="dados" type="application/json">{"config": {"modoPrevia": true, "pagamentoAtivo": false, "checkoutEndpoint": "/api/checkout", "whatsapp": "", "whatsappTexto": "(11) 9XXXX-XXXX", "email": "contato@joyelle.com.br", "instagram": "joyelle.joias", "cnpj": "[CNPJ]", "horario": "Seg a sex, 9h às 18h", "pixDesconto": 0.05, "parcelasSemJuros": 12, "parcelaMinima": 100, "freteGratisAcima": 1500, "frete": {"regioes": [{"id": "sp", "nome": "São Paulo", "prefixos": ["0", "1"]}, {"id": "se", "nome": "RJ, ES e MG", "prefixos": ["2", "3"]}, {"id": "sul", "nome": "Região Sul", "prefixos": ["8", "9"]}, {"id": "outras", "nome": "Demais regiões", "prefixos": ["4", "5", "6", "7"]}], "opcoes": [{"id": "pac", "nome": "Envio segurado", "gratisAcimaDoLimite": true, "preco": {"sp": 24.9, "se": 32.9, "sul": 34.9, "outras": 44.9}, "prazo": {"sp": "3 a 5 dias úteis", "se": "4 a 7 dias úteis", "sul": "5 a 8 dias úteis", "outras": "7 a 12 dias úteis"}}, {"id": "sedex", "nome": "Expresso segurado", "gratisAcimaDoLimite": false, "preco": {"sp": 39.9, "se": 54.9, "sul": 59.9, "outras": 79.9}, "prazo": {"sp": "1 a 2 dias úteis", "se": "2 a 3 dias úteis", "sul": "2 a 4 dias úteis", "outras": "3 a 6 dias úteis"}}]}}, "categorias": [{"id": "aneis", "nome": "Anéis", "desenho": "anel", "tom": "#1F7A55"}, {"id": "brincos", "nome": "Brincos", "desenho": "brinco", "tom": "#F1EADB"}, {"id": "colares", "nome": "Colares", "desenho": "trevo", "tom": "#D9B66C"}, {"id": "pulseiras", "nome": "Pulseiras", "desenho": "pulseira", "tom": "#1F7A55"}, {"id": "perolas", "nome": "Pérolas", "desenho": "colar", "tom": "#F1EADB", "porTag": true}, {"id": "presentes", "nome": "Presentes", "desenho": "trevo", "tom": "#D9B66C", "porTag": true}], "produtos": [{"id": "anel-solitario-esmeralda", "nome": "Anel Solitário Esmeralda", "categoria": "aneis", "tags": ["destaque"], "material": "Ouro 18k · Esmeralda natural", "preco": 3890, "ref": "JA-0101", "desenho": "anel", "tom": "#1F7A55", "aro": true, "fotos": [], "descricao": "Esmeralda natural em garras finas de ouro amarelo 18k, num aro delicado que deixa a pedra em destaque.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Pedra", "Esmeralda natural"], ["Lapidação", "Oval"], ["Peso aproximado", "2,4 g"]]}, {"id": "anel-trevo-joyelle", "nome": "Anel Trevo Joyelle", "categoria": "aneis", "tags": ["presentes", "trevo"], "material": "Ouro 18k", "preco": 1890, "ref": "JA-0102", "desenho": "anel-trevo", "tom": "#D9B66C", "aro": true, "fotos": [], "descricao": "O símbolo da marca em ouro 18k: quatro corações unidos, sobre um aro fino para usar todos os dias.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Acabamento", "Polido"], ["Peso aproximado", "1,8 g"]]}, {"id": "alianca-fio-ouro", "nome": "Aliança Fio Ouro 18k", "categoria": "aneis", "tags": [], "material": "Ouro 18k", "preco": 1290, "ref": "JA-0103", "desenho": "alianca", "tom": "#D9B66C", "aro": true, "fotos": [], "descricao": "Aliança de 2 mm em ouro 18k, confortável e discreta, para usar sozinha ou combinada.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Largura", "2 mm"], ["Peso aproximado", "2,1 g"]]}, {"id": "anel-perola-barroca", "nome": "Anel Pérola Barroca", "categoria": "aneis", "tags": ["perolas"], "material": "Ouro 18k · Pérola", "preco": 1590, "ref": "JA-0104", "desenho": "anel", "tom": "#F1EADB", "aro": true, "fotos": [], "descricao": "Pérola barroca de formato único, presa em ouro 18k. Nenhuma peça sai igual à outra.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Pérola", "Barroca cultivada"], ["Peso aproximado", "2,0 g"]]}, {"id": "brinco-gota-esmeralda", "nome": "Brinco Gota Esmeralda", "categoria": "brincos", "tags": ["destaque"], "material": "Ouro 18k · Esmeralda natural", "preco": 2490, "ref": "JB-0201", "desenho": "brinco", "tom": "#1F7A55", "aro": false, "fotos": [], "descricao": "Par de esmeraldas em lapidação gota, com fecho tarraxa em ouro 18k.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Pedra", "Esmeralda natural"], ["Lapidação", "Gota"], ["Fecho", "Tarraxa"]]}, {"id": "brinco-ponto-de-luz-perola", "nome": "Brinco Ponto de Luz Pérola", "categoria": "brincos", "tags": ["perolas", "presentes", "destaque"], "material": "Ouro 18k · Pérola", "preco": 790, "ref": "JB-0202", "desenho": "brinco", "tom": "#F1EADB", "aro": false, "fotos": [], "descricao": "Pérola cultivada de 6 mm em base de ouro 18k. O primeiro brinco de muitas joias.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Pérola", "Cultivada, 6 mm"], ["Fecho", "Tarraxa"]]}, {"id": "argola-classica", "nome": "Argola Clássica Ouro 18k", "categoria": "brincos", "tags": ["presentes"], "material": "Ouro 18k", "preco": 1190, "ref": "JB-0203", "desenho": "argola", "tom": "#D9B66C", "aro": false, "fotos": [], "descricao": "Argola média de 20 mm em ouro 18k, leve para o dia a dia.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Diâmetro", "20 mm"], ["Fecho", "Pressão"]]}, {"id": "colar-trevo-joyelle", "nome": "Colar Trevo Joyelle", "categoria": "colares", "tags": ["presentes", "trevo", "destaque"], "material": "Ouro 18k", "preco": 1690, "ref": "JC-0301", "desenho": "trevo", "tom": "#D9B66C", "aro": false, "fotos": [], "descricao": "Pingente Trevo Joyelle em ouro 18k com corrente veneziana de 45 cm.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Corrente", "Veneziana, 45 cm"], ["Pingente", "12 mm"]]}, {"id": "colar-perola-unica", "nome": "Colar Pérola Única", "categoria": "colares", "tags": ["perolas", "presentes"], "material": "Ouro 18k · Pérola", "preco": 990, "ref": "JC-0302", "desenho": "colar", "tom": "#F1EADB", "aro": false, "fotos": [], "descricao": "Uma pérola cultivada de 8 mm em corrente fina de ouro 18k.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Pérola", "Cultivada, 8 mm"], ["Corrente", "40 cm"]]}, {"id": "gargantilha-esmeralda", "nome": "Gargantilha Esmeralda", "categoria": "colares", "tags": [], "material": "Ouro 18k · Esmeralda natural", "preco": 2890, "ref": "JC-0303", "desenho": "colar", "tom": "#1F7A55", "aro": false, "fotos": [], "descricao": "Esmeralda oval em moldura de ouro 18k, rente ao pescoço.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Pedra", "Esmeralda natural"], ["Corrente", "40 cm"]]}, {"id": "pulseira-riviera", "nome": "Pulseira Riviera", "categoria": "pulseiras", "tags": ["destaque"], "material": "Ouro 18k · Pedras", "preco": 5890, "ref": "JP-0401", "desenho": "pulseira", "tom": "#1F7A55", "aro": false, "fotos": [], "descricao": "Linha contínua de pedras em ouro 18k, com fecho de segurança duplo.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Comprimento", "17 cm"], ["Fecho", "Gaveta com trava"]]}, {"id": "pulseira-trevo", "nome": "Pulseira Trevo", "categoria": "pulseiras", "tags": ["presentes", "trevo"], "material": "Ouro 18k", "preco": 1490, "ref": "JP-0402", "desenho": "pulseira-trevo", "tom": "#D9B66C", "aro": false, "fotos": [], "descricao": "Corrente fina com o Trevo Joyelle ao centro, ajustável de 16 a 18 cm.", "detalhes": [["Metal", "Ouro amarelo 18k (750)"], ["Comprimento", "16 a 18 cm"], ["Pingente", "9 mm"]]}]}</script>
+<script>
+(function(){
+'use strict';
+var D = JSON.parse(document.getElementById('dados').textContent);
+var C = D.config, PRODS = D.produtos, CATS = D.categorias;
+var porId = {}; PRODS.forEach(function(p){ porId[p.id] = p; });
+var ARO_MIN = 10, ARO_MAX = 26;
+
+/* ---------- utilidades ---------- */
+function brl(v){ return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function so(s){ return String(s||'').replace(/\D/g,''); }
+function $(s,r){ return (r||document).querySelector(s); }
+function ler(k,def){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; }catch(e){ return def; } }
+function gravar(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function waLink(texto){
+  var n = so(C.whatsapp);
+  if(!n) return '#';
+  return 'https://wa.me/' + n + (texto ? '?text=' + encodeURIComponent(texto) : '');
+}
+var toastT;
+function toast(msg){ var t = $('#toast'); t.textContent = msg; t.classList.add('ver'); clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove('ver'); }, 2600); }
+function precoPix(v){ return Math.round(v * (1 - C.pixDesconto) * 100) / 100; }
+function maxParcelas(total){ return Math.max(1, Math.min(C.parcelasSemJuros, Math.floor(total / C.parcelaMinima))); }
+function textoParcela(v){ var n = maxParcelas(v); return n > 1 ? 'ou ' + n + 'x de ' + brl(v / n) + ' sem juros' : 'à vista no cartão'; }
+var pctPix = Math.round(C.pixDesconto * 100);
+
+/* ---------- desenhos das peças (até as fotos chegarem) ---------- */
+var OURO = '#B08A3E';
+function coracoes(cx, cy, s, fill){
+  var h = 'M0,0 C-7,-6 -9.5,-12 -6,-15.5 C-3.5,-18 -0.5,-16.5 0,-13.5 C0.5,-16.5 3.5,-18 6,-15.5 C9.5,-12 7,-6 0,0Z';
+  var g = '';
+  for(var i=0;i<4;i++) g += '<path d="'+h+'" transform="rotate('+(i*90)+')"/>';
+  return '<g transform="translate('+cx+' '+cy+') scale('+s+')" fill="'+fill+'" stroke="none">'+g+'</g>';
+}
+function trevoSvg(px, cor){
+  return '<svg width="'+px+'" height="'+px+'" viewBox="-20 -20 40 40" aria-hidden="true">'+coracoes(0,0,1.1,cor||'#D9B66C')+'</svg>';
+}
+function pedra(cx, cy, r, tom){
+  var perola = tom.toLowerCase() === '#f1eadb';
+  if(perola) return '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="#F7F2E8" stroke="#CDBF9F" stroke-width="1.2"/><circle cx="'+(cx-r*.35)+'" cy="'+(cy-r*.35)+'" r="'+(r*.28)+'" fill="#FFFFFF" opacity=".9"/>';
+  if(tom.toLowerCase() === '#d9b66c') return '<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.8)+'" fill="#D9B66C" stroke="'+OURO+'" stroke-width="1.2"/>';
+  var w = r*.82;
+  return '<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+w+'" ry="'+r+'" fill="'+tom+'" stroke="'+OURO+'" stroke-width="1.6"/><path d="M'+(cx-w*.5)+','+(cy-r*.2)+' L'+cx+','+(cy-r*.75)+' L'+(cx+w*.5)+','+(cy-r*.2)+'" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="1"/>';
+}
+function desenho(tipo, tom, px, fundoEscuro){
+  var s = '', st = 'fill="none" stroke="'+OURO+'" stroke-linecap="round"';
+  switch(tipo){
+    case 'anel': s = '<ellipse cx="100" cy="122" rx="46" ry="44" '+st+' stroke-width="6"/><path d="M88,80 L94,70 M112,80 L106,70" '+st+' stroke-width="3"/>' + pedra(100,62,15,tom); break;
+    case 'anel-trevo': s = '<ellipse cx="100" cy="124" rx="46" ry="44" '+st+' stroke-width="5"/>' + coracoes(100,76,1.25,'#D9B66C'); break;
+    case 'alianca': s = '<ellipse cx="100" cy="108" rx="52" ry="50" '+st+' stroke-width="11"/><ellipse cx="100" cy="108" rx="52" ry="50" fill="none" stroke="#E7CF96" stroke-width="2" stroke-opacity=".9"/>'; break;
+    case 'brinco': s = '<path d="M72,46 a8,8 0 1 1 0,0.1" '+st+' stroke-width="3"/><path d="M72,62 L72,92" '+st+' stroke-width="2.5"/>' + pedra(72,108,14,tom) + '<path d="M128,46 a8,8 0 1 1 0,0.1" '+st+' stroke-width="3"/><path d="M128,62 L128,92" '+st+' stroke-width="2.5"/>' + pedra(128,108,14,tom); break;
+    case 'argola': s = '<circle cx="72" cy="100" r="30" '+st+' stroke-width="5"/><circle cx="128" cy="100" r="30" '+st+' stroke-width="5"/>'; break;
+    case 'colar': s = '<path d="M34,40 Q100,150 166,40" '+st+' stroke-width="2.5"/><path d="M100,113 L100,121" '+st+' stroke-width="2.5"/>' + pedra(100,134,13,tom); break;
+    case 'trevo': s = '<path d="M34,40 Q100,150 166,40" '+st+' stroke-width="2.5"/>' + coracoes(100,128,1.35,'#D9B66C'); break;
+    case 'pulseira': s = '<ellipse cx="100" cy="104" rx="70" ry="34" '+st+' stroke-width="4"/>'; for(var i=0;i<9;i++){ var a = Math.PI*(0.08 + i*0.105); s += pedra(100 + 70*Math.cos(a), 104 + 34*Math.sin(a), 6.5, tom); } break;
+    case 'pulseira-trevo': s = '<ellipse cx="100" cy="100" rx="70" ry="34" '+st+' stroke-width="2.5"/>' + coracoes(100,140,1.1,'#D9B66C'); break;
+    default: s = coracoes(100,100,2,'#D9B66C');
+  }
+  return '<svg width="'+(px||'62%')+'" viewBox="0 0 200 200" style="max-width:100%;height:auto" aria-hidden="true">'+s+'</svg>';
+}
+function arteProduto(p, px){
+  if(p.fotos && p.fotos.length) return '<img src="'+esc(p.fotos[0])+'" alt="'+esc(p.nome)+'" loading="lazy" style="width:100%;height:100%;object-fit:cover">';
+  return desenho(p.desenho, p.tom, px);
+}
+
+/* ---------- sacola ---------- */
+var sacola = ler('joyelle-sacola', []).filter(function(i){ return porId[i.id] && i.qtd > 0; });
+function salvarSacola(){ gravar('joyelle-sacola', sacola); atualizarContador(); }
+function chave(i){ return i.id + '|' + (i.aro || ''); }
+function adicionar(id, aro, qtd){
+  var ex = sacola.filter(function(i){ return chave(i) === id + '|' + (aro||''); })[0];
+  if(ex) ex.qtd = Math.min(9, ex.qtd + qtd); else sacola.push({id:id, aro:aro||null, qtd:qtd});
+  salvarSacola();
+}
+function subtotal(){ return sacola.reduce(function(s,i){ return s + porId[i.id].preco * i.qtd; }, 0); }
+function nItens(){ return sacola.reduce(function(s,i){ return s + i.qtd; }, 0); }
+function atualizarContador(){ var c = $('#contador'), n = nItens(); c.textContent = n; c.hidden = n === 0; }
+
+var ultimoFoco = null;
+function abrirSacola(){
+  renderSacola();
+  ultimoFoco = document.activeElement;
+  $('#sacola').classList.add('aberta'); $('#sacola').setAttribute('aria-hidden','false');
+  $('#veu').classList.add('aberto');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ var b = $('#sacola .icone-btn'); if(b) b.focus(); }, 60);
+}
+function fecharSacola(){
+  $('#sacola').classList.remove('aberta'); $('#sacola').setAttribute('aria-hidden','true');
+  $('#veu').classList.remove('aberto');
+  document.body.style.overflow = '';
+  if(ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
+}
+function blocoProgresso(sub){
+  var falta = C.freteGratisAcima - sub;
+  var pct = Math.min(100, Math.round(sub / C.freteGratisAcima * 100));
+  var txt = falta > 0 ? 'Faltam <strong class="num">'+brl(falta)+'</strong> para o envio segurado grátis.' : '<strong>Envio segurado grátis</strong> liberado neste pedido.';
+  return '<div class="progresso">'+txt+'<div class="barra" aria-hidden="true"><i style="width:'+pct+'%"></i></div></div>';
+}
+function renderSacola(){
+  var el = $('#sacola'), sub = subtotal();
+  var h = '<div class="sacola-cab"><h2 id="sacola-titulo">Sacola</h2><button class="icone-btn" type="button" data-acao="fechar-sacola" aria-label="Fechar sacola"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>';
+  if(!sacola.length){
+    h += '<div class="sacola-corpo"><div class="vazia">'+trevoSvg(44,'#C9AE76')+'<p style="margin:0">Sua sacola está vazia.</p><a class="btn btn-verde" href="#todas" data-acao="fechar-sacola">Ver joias</a></div></div>';
+    el.innerHTML = h; return;
+  }
+  h += blocoProgresso(sub) + '<div class="sacola-corpo">';
+  sacola.forEach(function(i, idx){
+    var p = porId[i.id];
+    h += '<div class="item"><a class="arte" href="#p-'+p.id+'" data-acao="fechar-sacola">'+arteProduto(p,'80%')+'</a><div style="min-width:0">'
+      + '<a class="nome" href="#p-'+p.id+'" data-acao="fechar-sacola">'+esc(p.nome)+'</a>'
+      + '<div class="meta">'+esc(p.material)+(i.aro ? ' · Aro '+i.aro : '')+'</div>'
+      + '<div class="linha"><div class="qtd"><button type="button" data-acao="menos" data-i="'+idx+'" aria-label="Diminuir quantidade">−</button><span class="num" aria-live="polite">'+i.qtd+'</span><button type="button" data-acao="mais" data-i="'+idx+'" aria-label="Aumentar quantidade">+</button></div>'
+      + '<strong class="num">'+brl(p.preco * i.qtd)+'</strong></div>'
+      + '<button class="remover" type="button" data-acao="remover" data-i="'+idx+'">Remover</button></div></div>';
+  });
+  h += '</div><div class="sacola-pe">'
+    + '<div class="total-linha forte"><span>Subtotal</span><span class="num">'+brl(sub)+'</span></div>'
+    + '<div class="total-linha" style="color:var(--cinza)"><span>'+textoParcela(sub).replace(/^ou /,'')+'</span><span class="num" style="color:var(--ok)">'+brl(precoPix(sub))+' no Pix</span></div>'
+    + '<a class="btn btn-verde" href="#checkout" data-acao="fechar-sacola" style="min-height:56px">Finalizar compra</a>'
+    + '<button class="btn btn-linha" type="button" data-acao="fechar-sacola">Continuar comprando</button></div>';
+  el.innerHTML = h;
+}
+
+/* ---------- frete ---------- */
+function regiaoDoCep(cep){
+  var d = so(cep).charAt(0);
+  return C.frete.regioes.filter(function(r){ return r.prefixos.indexOf(d) >= 0; })[0] || null;
+}
+function opcoesFrete(cep, sub){
+  var r = regiaoDoCep(cep); if(!r || so(cep).length !== 8) return [];
+  return C.frete.opcoes.map(function(o){
+    var gratis = o.gratisAcimaDoLimite && sub >= C.freteGratisAcima;
+    return { id:o.id, nome:o.nome, prazo:o.prazo[r.id], valor: gratis ? 0 : o.preco[r.id] };
+  });
+}
+function mascaraCep(v){ v = so(v).slice(0,8); return v.length > 5 ? v.slice(0,5) + '-' + v.slice(5) : v; }
+
+/* ---------- vitrine ---------- */
+function produtosDaCategoria(cid){
+  if(cid === 'todas') return PRODS.slice();
+  var cat = CATS.filter(function(c){ return c.id === cid; })[0];
+  if(!cat) return [];
+  return PRODS.filter(function(p){ return cat.porTag ? p.tags.indexOf(cid) >= 0 : p.categoria === cid; });
+}
+function card(p){
+  return '<div class="card"><a href="#p-'+p.id+'" style="display:contents"><div class="arte">'+arteProduto(p)+'</div></a>'
+    + '<span class="mat">'+esc(p.material)+'</span>'
+    + '<a class="nome" href="#p-'+p.id+'">'+esc(p.nome)+'</a>'
+    + '<span class="preco num">'+brl(p.preco)+'</span>'
+    + '<span class="parc num">'+textoParcela(p.preco)+'</span></div>';
+}
+
+function viewInicio(){
+  var destaques = PRODS.filter(function(p){ return p.tags.indexOf('destaque') >= 0; }).slice(0,4);
+  var catsHome = CATS.filter(function(c){ return !c.porTag || c.id === 'perolas'; }).slice(0,5);
+  return ''
+  + '<section class="faixa-verde hero"><div class="wrap">'
+  +   '<div class="hero-texto"><p class="eyebrow">Pedras · Pérolas · Ouro 18k</p>'
+  +   '<h1>Joias em ouro 18k feitas para atravessar gerações.</h1>'
+  +   '<p class="lead">Cada peça acompanha certificado de autenticidade e chega em estojo de presente, com envio segurado para todo o Brasil.</p>'
+  +   '<div class="hero-acoes"><a class="btn btn-ouro" href="#todas">Ver coleção</a><a class="btn btn-linha-claro" data-wa href="'+waLink('Olá! Quero ajuda para escolher uma joia.')+'" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>Falar com especialista</a></div></div>'
+  +   '<div class="hero-arte"><a class="moldura" href="#p-anel-solitario-esmeralda" aria-label="Ver Anel Solitário Esmeralda">'+desenho('anel','#1F7A55','58%')+'</a></div>'
+  + '</div></section>'
+  + '<section class="garantias" aria-label="Garantias"><div class="wrap">'
+  +   garantia('<path d="M6 3h12l3 6-9 12L3 9l3-6z"/><path d="M3 9h18M9 3l3 18 3-18"/>','Ouro 18k (750)','Teor de ouro garantido em nota')
+  +   garantia('<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h4"/>','Certificado de autenticidade','Para cada pedra e pérola')
+  +   garantia('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>','Envio segurado','Rastreio do início ao fim')
+  +   garantia('<rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10h18M7 15h4"/>','12x sem juros',pctPix+'% de desconto no Pix')
+  + '</div></section>'
+  + '<section class="wrap secao"><div class="secao-cab"><div><p class="eyebrow">Categorias</p><h2>Escolha pela peça</h2></div><a class="link-ouro" href="#todas">Ver tudo</a></div>'
+  +   '<div class="grade-cats">' + catsHome.map(function(c){ return '<a class="cat-card" href="#'+c.id+'"><div class="arte">'+desenho(c.desenho,c.tom,'64%')+'</div><span>'+esc(c.nome)+'</span></a>'; }).join('') + '</div></section>'
+  + '<section class="wrap secao" style="padding-bottom:88px"><div class="secao-cab"><div><p class="eyebrow">Mais desejadas</p><h2>As favoritas das clientes</h2></div><a class="link-ouro" href="#todas">Ver coleção</a></div>'
+  +   '<div class="grade-prod">' + destaques.map(card).join('') + '</div></section>'
+  + '<section class="faixa-verde assinatura"><div class="wrap"><a class="arte" href="#p-colar-trevo-joyelle" aria-label="Ver Colar Trevo Joyelle">'+trevoSvg(180)+'</a>'
+  +   '<div class="texto">'+trevoSvg(40)+'<p class="eyebrow">Coleção assinatura</p><h2>Trevo Joyelle</h2><p>Quatro corações unidos em ouro 18k: o símbolo da marca transformado em joia, para presentear quem é sorte na sua vida.</p><a class="btn btn-ouro" href="#presentes">Conhecer a coleção</a></div></div></section>'
+  + '<section class="wrap confianca"><h2>Comprar joia online, com segurança</h2><div class="grade">'
+  +   '<div class="item"><h3>Atendimento de especialista</h3><p>Tire dúvidas sobre tamanho, pedra ou presente direto no WhatsApp, antes ou depois da compra.</p></div>'
+  +   '<div class="item"><h3>Pagamento protegido</h3><p>Pix com '+pctPix+'% de desconto ou cartão em até '+C.parcelasSemJuros+'x sem juros, num ambiente de pagamento seguro.</p></div>'
+  +   '<div class="item"><h3>Pronta para presentear</h3><p>Estojo Joyelle, cartão com mensagem e nota fiscal em todas as peças.</p></div>'
+  + '</div></section>'
+  + '<section class="chamada-wa"><div class="wrap"><div style="flex:1 1 420px;min-width:0"><h2>Procurando a peça certa para uma data especial?</h2><p>Nossa especialista ajuda a escolher pelo WhatsApp, sem compromisso.</p></div><a class="btn btn-verde" data-wa href="'+waLink('Olá! Quero ajuda para escolher uma joia.')+'" target="_blank" rel="noopener">Falar no WhatsApp</a></div></section>';
+}
+function garantia(path, t, s){ return '<div class="garantia"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8A6A2E" stroke-width="1.4" aria-hidden="true">'+path+'</svg><p><strong>'+t+'</strong>'+s+'</p></div>'; }
+
+var ordemAtual = 'relevancia';
+function viewCategoria(cid){
+  var cat = CATS.filter(function(c){ return c.id === cid; })[0];
+  var nome = cid === 'todas' ? 'Todas as joias' : cat.nome;
+  var lista = produtosDaCategoria(cid);
+  if(ordemAtual === 'menor') lista.sort(function(a,b){ return a.preco - b.preco; });
+  if(ordemAtual === 'maior') lista.sort(function(a,b){ return b.preco - a.preco; });
+  return '<section class="cab-cat"><div class="wrap"><div><nav class="migalha" aria-label="Você está em" style="padding:0 0 6px"><a href="#inicio">Início</a><span aria-hidden="true">/</span><span>'+esc(nome)+'</span></nav><h1>'+esc(nome)+'</h1><p class="qtd num">'+lista.length+(lista.length === 1 ? ' peça' : ' peças')+'</p></div>'
+    + '<label class="ordem" for="ordem">Ordenar por <select id="ordem" data-acao="ordenar"><option value="relevancia"'+(ordemAtual==='relevancia'?' selected':'')+'>Relevância</option><option value="menor"'+(ordemAtual==='menor'?' selected':'')+'>Menor preço</option><option value="maior"'+(ordemAtual==='maior'?' selected':'')+'>Maior preço</option></select></label></div></section>'
+    + '<section class="wrap" style="padding-block:40px 96px">' + (lista.length ? '<div class="grade-prod">' + lista.map(card).join('') + '</div>' : '<p>Nenhuma peça nesta categoria ainda.</p>') + '</section>';
+}
+
+/* ---------- produto ---------- */
+var pe = { id:null, aro:null, qtd:1, tentou:false, aberta:'det', vista:0, cep:'' };
+function viewProduto(id){
+  var p = porId[id];
+  if(!p) return viewNaoEncontrado();
+  if(pe.id !== id) pe = { id:id, aro:null, qtd:1, tentou:false, aberta:'det', vista:0, cep:pe.cep };
+  var cat = CATS.filter(function(c){ return c.id === p.categoria; })[0];
+  var vistas = ['Frente','Perfil','Na mão','Detalhe'];
+  var h = '<div class="wrap"><nav class="migalha" aria-label="Você está em"><a href="#inicio">Início</a><span aria-hidden="true">/</span><a href="#'+cat.id+'">'+esc(cat.nome)+'</a><span aria-hidden="true">/</span><span style="color:var(--tinta)">'+esc(p.nome)+'</span></nav>'
+    + '<div class="produto"><div class="galeria"><div class="principal">'+arteProduto(p,'64%')+'</div><div class="miniaturas" role="group" aria-label="Fotos da peça">'
+    + vistas.map(function(v,i){ return '<button type="button" data-acao="vista" data-i="'+i+'" aria-pressed="'+(pe.vista===i)+'" aria-label="'+v+'">'+desenho(p.desenho,p.tom,'70%')+'</button>'; }).join('')
+    + '</div></div><div class="info" id="info"></div></div></div>'
+    + '<section class="faixa-verde faixa-info"><div class="wrap"><div><h2>Compra segura</h2><p>Pagamento por Pix ou cartão em até '+C.parcelasSemJuros+'x sem juros, processado em ambiente protegido. Seus dados de cartão não ficam salvos no site.</p></div><div><h2>Ajuste de aro</h2><p>Se o tamanho não servir, ajustamos o aro após o recebimento. Fale com a gente pelo WhatsApp.</p></div><div><h2>Dúvidas?</h2><p>Nossa especialista responde pelo WhatsApp em horário comercial.</p></div></div></section>';
+  var rel = PRODS.filter(function(x){ return x.id !== p.id && (x.categoria !== p.categoria || x.tags.indexOf('trevo')>=0); }).slice(0,4);
+  h += '<section class="wrap" style="padding-block:80px 96px"><h2 class="serif" style="margin:0 0 32px;font-size:clamp(30px,3.2vw,40px);line-height:1.1">Combina com</h2><div class="grade-prod">'+rel.map(card).join('')+'</div></section>';
+  return h;
+}
+function renderInfo(){
+  var p = porId[pe.id], el = $('#info'); if(!el) return;
+  var h = '<div><p class="eyebrow" style="margin-bottom:8px">'+esc(p.material)+'</p><h1>'+esc(p.nome)+'</h1><p class="ref">Ref. '+esc(p.ref)+'</p></div>'
+    + '<div class="bloco-preco"><span class="grande num">'+brl(p.preco)+'</span><span class="num">'+textoParcela(p.preco)+'</span><span class="pix num">'+brl(precoPix(p.preco))+' no Pix ('+pctPix+'% off)</span></div>'
+    + '<p class="desc">'+esc(p.descricao)+'</p>';
+  if(p.aro){
+    h += '<div style="display:flex;flex-direction:column;gap:12px"><div class="linha-sel"><span id="aro-rot"><strong>Tamanho do aro:</strong> '+(pe.aro || 'selecione')+'</span><a class="link-ouro" style="font-size:12px;letter-spacing:.08em" href="#ajuda-tamanhos">Descobrir meu tamanho</a></div><div class="aros" role="group" aria-labelledby="aro-rot">';
+    for(var n=ARO_MIN;n<=ARO_MAX;n++) h += '<button type="button" data-acao="aro" data-n="'+n+'" aria-pressed="'+(pe.aro===n)+'">'+n+'</button>';
+    h += '</div>' + (pe.tentou && !pe.aro ? '<span class="aviso-erro" role="alert">Escolha o tamanho do aro para continuar.</span>' : '') + '</div>';
+  }
+  h += '<div class="linha-sel" style="align-items:center"><strong>Quantidade</strong><div class="qtd"><button type="button" data-acao="pq-menos" aria-label="Diminuir quantidade">−</button><span class="num" aria-live="polite">'+pe.qtd+'</span><button type="button" data-acao="pq-mais" aria-label="Aumentar quantidade">+</button></div></div>'
+    + '<div class="compra"><button class="btn btn-verde" type="button" data-acao="comprar">Comprar agora</button><button class="btn btn-linha" type="button" data-acao="adicionar">Adicionar à sacola</button>'
+    + '<a class="btn" style="min-height:44px;color:var(--verde);letter-spacing:.1em" data-wa href="'+waLink('Olá! Tenho uma dúvida sobre o '+p.nome+' (Ref. '+p.ref+').')+'" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>Tirar dúvida com especialista</a></div>'
+    + '<div class="selos-prod"><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A6A2E" stroke-width="1.4" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>Certificado de autenticidade</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A6A2E" stroke-width="1.4" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg>Garantia Joyelle</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A6A2E" stroke-width="1.4" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>Estojo de presente</div></div>'
+    + '<div class="calc-frete"><label for="cep-prod" style="font-size:14px;font-weight:600">Calcular frete e prazo</label><div class="linha"><input class="campo-in num" id="cep-prod" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" value="'+esc(pe.cep)+'"><button class="btn btn-linha" type="button" data-acao="calc-frete" style="min-height:48px;padding:0 20px">Calcular</button></div><div class="resultado-frete" id="res-frete" aria-live="polite"></div></div>'
+    + '<div class="acordeao">' + [['det','Detalhes da peça',p.detalhes],['env','Envio e prazo',[['Envio','Segurado, com rastreio'],['Embalagem','Estojo Joyelle e certificado'],['Frete grátis','Acima de '+brl(C.freteGratisAcima)]]],['cui','Cuidados com a joia',[['Limpeza','Flanela seca e macia'],['Evite','Perfume, cloro e produtos químicos'],['Guardar','Separada, no estojo']]]].map(function(s){
+        var ab = pe.aberta === s[0];
+        return '<div><button type="button" data-acao="acordeao" data-s="'+s[0]+'" aria-expanded="'+ab+'">'+s[1]+'<span aria-hidden="true" style="font-size:20px;font-weight:400">'+(ab?'−':'+')+'</span></button>'+(ab ? '<div class="corpo">'+s[2].map(function(kv){ return '<div class="kv"><span>'+esc(kv[0])+'</span><span style="text-align:right">'+esc(kv[1])+'</span></div>'; }).join('')+'</div>' : '')+'</div>';
+      }).join('') + '</div>';
+  el.innerHTML = h;
+  if(pe.cep) mostrarFreteProduto();
+}
+function mostrarFreteProduto(){
+  var r = $('#res-frete'); if(!r) return;
+  var p = porId[pe.id], ops = opcoesFrete(pe.cep, p.preco * pe.qtd);
+  if(so(pe.cep).length !== 8){ r.innerHTML = '<span class="aviso-erro">Digite os 8 números do CEP.</span>'; return; }
+  r.innerHTML = ops.map(function(o){ return '<div><span>'+esc(o.nome)+' · '+esc(o.prazo)+'</span><strong class="num">'+(o.valor ? brl(o.valor) : 'Grátis')+'</strong></div>'; }).join('');
+}
+
+/* ---------- checkout ---------- */
+var ck = ler('joyelle-checkout', { email:'', nome:'', cpf:'', tel:'', cep:'', rua:'', numero:'', compl:'', bairro:'', cidade:'', uf:'', frete:'pac', pag:'pix', parcelas:1 });
+function salvarCk(){ var c = {}; for(var k in ck) c[k] = ck[k]; gravar('joyelle-checkout', c); }
+function cpfValido(v){
+  v = so(v); if(v.length !== 11 || /^(\d)\1+$/.test(v)) return false;
+  for(var t=9;t<11;t++){ var s=0; for(var i=0;i<t;i++) s += +v[i] * (t+1-i); var d = (s*10) % 11 % 10; if(d !== +v[t]) return false; }
+  return true;
+}
+function mascaraCpf(v){ v = so(v).slice(0,11); return v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})\.(\d{3})(\d)/,'$1.$2.$3').replace(/\.(\d{3})(\d{1,2})$/,'.$1-$2'); }
+function mascaraTel(v){ v = so(v).slice(0,11); if(v.length <= 2) return v; if(v.length <= 7) return '('+v.slice(0,2)+') '+v.slice(2); return '('+v.slice(0,2)+') '+v.slice(2, v.length-4)+'-'+v.slice(-4); }
+function totais(){
+  var sub = subtotal(), ops = opcoesFrete(ck.cep, sub);
+  var f = ops.filter(function(o){ return o.id === ck.frete; })[0] || ops[0] || null;
+  var desc = ck.pag === 'pix' ? Math.round(sub * C.pixDesconto * 100) / 100 : 0;
+  var frete = f ? f.valor : 0;
+  return { sub:sub, frete:frete, fOp:f, ops:ops, desc:desc, total: Math.round((sub - desc + frete) * 100) / 100 };
+}
+function campo(id, rot, cls, attrs){
+  return '<div class="campo '+(cls||'')+'"><label for="ck-'+id+'">'+rot+'</label><input class="campo-in" id="ck-'+id+'" name="'+id+'" value="'+esc(ck[id])+'" '+(attrs||'')+' aria-describedby="er-'+id+'"><span class="erro" id="er-'+id+'"></span></div>';
+}
+function viewCheckout(){
+  if(!sacola.length) return '<div class="wrap confirmado">'+trevoSvg(48,'#C9AE76')+'<h1>Sua sacola está vazia</h1><p class="nota">Escolha suas joias e volte aqui para finalizar.</p><a class="btn btn-verde" href="#todas">Ver joias</a></div>';
+  return '<div class="wrap"><nav class="migalha" aria-label="Você está em"><a href="#inicio">Início</a><span aria-hidden="true">/</span><span style="color:var(--tinta)">Finalizar compra</span></nav>'
+    + '<form class="checkout" id="form-ck" novalidate><div class="checkout-form">'
+    + '<section class="etapa"><h2><b>1</b>Seus dados</h2><div class="campos">'
+    +   campo('email','E-mail','','type="email" autocomplete="email" inputmode="email" required')
+    +   campo('nome','Nome completo','','autocomplete="name" required')
+    +   campo('cpf','CPF','m3','inputmode="numeric" autocomplete="off" maxlength="14" placeholder="000.000.000-00" required')
+    +   campo('tel','Celular com DDD','m3','type="tel" inputmode="tel" autocomplete="tel-national" maxlength="15" placeholder="(11) 90000-0000" required')
+    + '</div><p class="nota" style="margin-top:12px">O CPF é exigido para emitir a nota fiscal e para o seguro do envio.</p></section>'
+    + '<section class="etapa"><h2><b>2</b>Entrega</h2><div class="campos">'
+    +   campo('cep','CEP','m2','inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000" required')
+    +   '<div class="campo m4" style="justify-content:flex-end"><span class="nota" id="cep-status" aria-live="polite"></span></div>'
+    +   campo('rua','Endereço','m4','autocomplete="address-line1" required')
+    +   campo('numero','Número','m2','inputmode="numeric" required')
+    +   campo('compl','Complemento (opcional)','m3','autocomplete="address-line2"')
+    +   campo('bairro','Bairro','m3','required')
+    +   campo('cidade','Cidade','m4','autocomplete="address-level2" required')
+    +   campo('uf','UF','m2','autocomplete="address-level1" maxlength="2" required style="text-transform:uppercase"')
+    + '</div><div style="margin-top:18px"><p style="margin:0 0 10px;font-size:14px;font-weight:600">Forma de envio</p><div class="opcoes" id="op-frete" role="radiogroup" aria-label="Forma de envio"></div></div></section>'
+    + '<section class="etapa"><h2><b>3</b>Pagamento</h2><div class="opcoes" role="radiogroup" aria-label="Forma de pagamento">'
+    +   '<label class="opcao"><input type="radio" name="pag" value="pix"'+(ck.pag==='pix'?' checked':'')+'><span class="o-txt"><strong>Pix</strong><small>'+pctPix+'% de desconto. O código aparece na próxima tela.</small></span><span class="o-val num" id="val-pix"></span></label>'
+    +   '<label class="opcao"><input type="radio" name="pag" value="cartao"'+(ck.pag==='cartao'?' checked':'')+'><span class="o-txt"><strong>Cartão de crédito</strong><small>Em até '+C.parcelasSemJuros+'x sem juros.</small></span><span class="o-val num" id="val-cartao"></span></label>'
+    + '</div><div class="campo" id="bloco-parc" style="margin-top:14px"'+(ck.pag==='cartao'?'':' hidden')+'><label for="ck-parcelas">Parcelas</label><select class="campo-in" id="ck-parcelas" name="parcelas"></select></div>'
+    + '<p class="nota" style="margin-top:14px">Você conclui o pagamento num ambiente seguro do nosso processador. A Joyelle não guarda dados de cartão.</p></section>'
+    + '</div><aside class="resumo" id="resumo" aria-label="Resumo do pedido"></aside></form></div>';
+}
+function renderCheckoutDinamico(){
+  var t = totais();
+  var of = $('#op-frete');
+  if(of){
+    if(!t.ops.length) of.innerHTML = '<p class="nota">Digite o CEP para ver as opções de envio.</p>';
+    else of.innerHTML = t.ops.map(function(o){ return '<label class="opcao"><input type="radio" name="frete" value="'+o.id+'"'+(t.fOp && t.fOp.id===o.id?' checked':'')+'><span class="o-txt"><strong>'+esc(o.nome)+'</strong><small>'+esc(o.prazo)+'</small></span><span class="o-val num">'+(o.valor ? brl(o.valor) : 'Grátis')+'</span></label>'; }).join('');
+  }
+  var vp = $('#val-pix'); if(vp) vp.textContent = brl(Math.round((t.sub - t.sub*C.pixDesconto + t.frete)*100)/100);
+  var vc = $('#val-cartao'); if(vc) vc.textContent = brl(Math.round((t.sub + t.frete)*100)/100);
+  var sp = $('#ck-parcelas');
+  if(sp){
+    var max = maxParcelas(t.total), html = '';
+    if(ck.parcelas > max) ck.parcelas = max;
+    for(var i=1;i<=max;i++) html += '<option value="'+i+'"'+(i===+ck.parcelas?' selected':'')+'>'+i+'x de '+brl(t.total/i)+(i===1?' à vista':' sem juros')+'</option>';
+    sp.innerHTML = html;
+  }
+  var r = $('#resumo'); if(!r) return;
+  r.innerHTML = '<h2>Seu pedido</h2>'
+    + sacola.map(function(i){ var p = porId[i.id]; return '<div class="mini"><div class="arte">'+arteProduto(p,'82%')+'</div><div style="min-width:0"><div style="font-weight:500">'+esc(p.nome)+'</div><div class="nota">'+(i.aro?'Aro '+i.aro+' · ':'')+i.qtd+(i.qtd>1?' unidades':' unidade')+'</div></div><span class="num">'+brl(p.preco*i.qtd)+'</span></div>'; }).join('')
+    + '<hr><div class="total-linha"><span>Subtotal</span><span class="num">'+brl(t.sub)+'</span></div>'
+    + '<div class="total-linha"><span>Envio</span><span class="num">'+(t.fOp ? (t.frete ? brl(t.frete) : 'Grátis') : 'Informe o CEP')+'</span></div>'
+    + (t.desc ? '<div class="total-linha" style="color:var(--ok)"><span>Desconto Pix ('+pctPix+'%)</span><span class="num">−'+brl(t.desc)+'</span></div>' : '')
+    + '<hr><div class="total-linha forte"><span>Total</span><span class="num">'+brl(t.total)+'</span></div>'
+    + (ck.pag === 'cartao' && +ck.parcelas > 1 ? '<div class="nota num" style="text-align:right">'+ck.parcelas+'x de '+brl(t.total/ck.parcelas)+' sem juros</div>' : '')
+    + '<button class="btn btn-verde" type="submit" id="btn-pagar" style="min-height:56px;margin-top:8px">'+(ck.pag==='pix'?'Gerar Pix':'Ir para o pagamento')+'</button>'
+    + '<p class="nota" id="erro-envio" role="alert" style="color:var(--erro)"></p>'
+    + '<p class="nota" style="display:flex;gap:8px;align-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Compra protegida e envio segurado</p>';
+}
+var buscaCep = 0;
+function aoMudarCep(){
+  var c = so(ck.cep), st = $('#cep-status');
+  renderCheckoutDinamico();
+  if(c.length !== 8){ if(st) st.textContent = ''; return; }
+  var meu = ++buscaCep;
+  if(st) st.textContent = 'Buscando endereço…';
+  var ctl = window.AbortController ? new AbortController() : null;
+  var tm = setTimeout(function(){ if(ctl) ctl.abort(); }, 4000);
+  fetch('https://viacep.com.br/ws/'+c+'/json/', ctl ? {signal:ctl.signal} : {}).then(function(r){ return r.json(); }).then(function(j){
+    clearTimeout(tm); if(meu !== buscaCep) return;
+    if(j.erro){ if(st) st.textContent = 'CEP não encontrado. Confira os números.'; return; }
+    [['rua','logradouro'],['bairro','bairro'],['cidade','localidade'],['uf','uf']].forEach(function(m){ if(j[m[1]]){ ck[m[0]] = j[m[1]]; var i = $('#ck-'+m[0]); if(i) i.value = j[m[1]]; } });
+    salvarCk(); if(st) st.textContent = 'Endereço encontrado. Confira e informe o número.';
+    var n = $('#ck-numero'); if(n && !n.value) n.focus();
+  }).catch(function(){ clearTimeout(tm); if(meu === buscaCep && st) st.textContent = 'Preencha o endereço abaixo.'; });
+}
+function validar(){
+  var erros = {};
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ck.email)) erros.email = 'Digite um e-mail válido, como nome@gmail.com.';
+  if(ck.nome.trim().split(/\s+/).length < 2) erros.nome = 'Digite nome e sobrenome.';
+  if(!cpfValido(ck.cpf)) erros.cpf = 'CPF inválido. Confira os 11 números.';
+  if(so(ck.tel).length < 10) erros.tel = 'Digite o celular com DDD.';
+  if(so(ck.cep).length !== 8) erros.cep = 'Digite os 8 números do CEP.';
+  ['rua','numero','bairro','cidade'].forEach(function(k){ if(!String(ck[k]).trim()) erros[k] = 'Campo obrigatório.'; });
+  if(!/^[A-Za-z]{2}$/.test(ck.uf)) erros.uf = 'Use a sigla, como SP.';
+  ['email','nome','cpf','tel','cep','rua','numero','bairro','cidade','uf'].forEach(function(k){
+    var i = $('#ck-'+k), e = $('#er-'+k); if(!i) return;
+    i.setAttribute('aria-invalid', erros[k] ? 'true' : 'false'); e.textContent = erros[k] || '';
+  });
+  var primeiro = Object.keys(erros)[0];
+  if(primeiro){ var el = $('#ck-'+primeiro); if(el) el.focus(); }
+  return !primeiro;
+}
+function enviarPedido(){
+  if(!validar()) return;
+  var t = totais(); if(!t.fOp){ $('#erro-envio').textContent = 'Escolha a forma de envio.'; return; }
+  var pedido = {
+    itens: sacola.map(function(i){ return { id:i.id, aro:i.aro, qtd:i.qtd }; }),
+    cliente: { nome:ck.nome.trim(), email:ck.email.trim(), cpf:so(ck.cpf), telefone:so(ck.tel) },
+    entrega: { cep:so(ck.cep), rua:ck.rua, numero:ck.numero, complemento:ck.compl, bairro:ck.bairro, cidade:ck.cidade, uf:ck.uf.toUpperCase(), frete:t.fOp.id },
+    pagamento: { metodo:ck.pag, parcelas: ck.pag === 'cartao' ? +ck.parcelas : 1 },
+    totalExibido: t.total
+  };
+  var b = $('#btn-pagar'); b.disabled = true; b.textContent = 'Enviando…';
+  if(!C.pagamentoAtivo){
+    var linhas = sacola.map(function(i){ var p = porId[i.id]; return '• ' + i.qtd + 'x ' + p.nome + (i.aro ? ' (aro ' + i.aro + ')' : '') + ' – ' + brl(p.preco * i.qtd); }).join('\n');
+    var msg = 'Olá! Quero fazer este pedido na Joyelle:\n' + linhas + '\nEntrega: ' + t.fOp.nome + ' (CEP ' + mascaraCep(ck.cep) + ')\nTotal: ' + brl(t.total) + ' (' + (ck.pag === 'pix' ? 'Pix' : 'cartão em ' + pedido.pagamento.parcelas + 'x') + ')\nNome: ' + ck.nome.trim();
+    var link = waLink(msg);
+    b.disabled = false; b.textContent = ck.pag==='pix'?'Gerar Pix':'Ir para o pagamento';
+    if(link === '#'){ $('#erro-envio').textContent = 'O pagamento online abre em breve. Por enquanto, fale com a gente pelo Instagram @' + C.instagram + ' para fechar o pedido.'; return; }
+    window.open(link, '_blank', 'noopener');
+    $('#erro-envio').textContent = 'Abrimos o WhatsApp com o seu pedido. É só enviar a mensagem que a especialista confirma o pagamento com você.';
+    return;
+  }
+  fetch(C.checkoutEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(pedido) })
+    .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.erro || 'Falha'); return j; }); })
+    .then(function(j){ if(j.redirectUrl){ sacola = []; salvarSacola(); location.href = j.redirectUrl; } else throw new Error('Resposta sem link de pagamento'); })
+    .catch(function(e){ b.disabled = false; b.textContent = ck.pag==='pix'?'Gerar Pix':'Ir para o pagamento'; $('#erro-envio').textContent = 'Não foi possível abrir o pagamento agora. Tente de novo em instantes ou chame a gente no WhatsApp.'; });
+}
+var ultimoPedido = null;
+function viewPedido(){
+  if(!ultimoPedido) return '<div class="wrap confirmado">'+trevoSvg(48,'#C9AE76')+'<h1>Nenhum pedido recente</h1><a class="btn btn-verde" href="#todas">Ver joias</a></div>';
+  var u = ultimoPedido;
+  return '<div class="wrap confirmado">'+trevoSvg(56)+'<p class="eyebrow">Pedido recebido</p><h1>Obrigada pela sua compra!</h1>'
+    + '<p class="nota" style="font-size:15px">Total de <strong class="num">'+brl(u.total)+'</strong> '+(u.metodo==='pix' ? 'no Pix' : 'no cartão'+(u.parcelas>1?' em '+u.parcelas+'x sem juros':''))+'. A confirmação vai para <strong>'+esc(u.email)+'</strong>.</p>'
+    + (u.teste ? '<div class="caixa-aviso"><strong>Pedido de teste.</strong> O pagamento ainda não está conectado, então nada foi cobrado. Quando a Stone ou o Mercado Pago forem ligados, este passo abre a tela de pagamento.</div>' : '')
+    + '<a class="btn btn-verde" href="#inicio">Voltar à loja</a></div>';
+}
+
+/* ---------- páginas de ajuda ---------- */
+var AJUDA = {
+  'ajuda-tamanhos': ['Guia de tamanhos', '<p>Para descobrir o número do aro, meça por dentro um anel que já sirva no dedo escolhido e compare com a tabela abaixo. Se ficar entre dois números, escolha o maior.</p><div style="overflow-x:auto"><table style="border-collapse:collapse;min-width:360px;font-variant-numeric:tabular-nums"><thead><tr><th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--linha)">Aro</th><th style="text-align:left;padding:8px 16px;border-bottom:1px solid var(--linha)">Diâmetro interno</th></tr></thead><tbody>' + (function(){ var r=''; for(var n=ARO_MIN;n<=ARO_MAX;n+=2){ r += '<tr><td style="padding:6px 16px 6px 0;border-bottom:1px solid var(--linha)">'+n+'</td><td style="padding:6px 16px;border-bottom:1px solid var(--linha)">'+(((n+40)/Math.PI)).toFixed(1).replace('.',',')+' mm</td></tr>'; } return r; })() + '</tbody></table></div><p>Ficou em dúvida? Chame a especialista no WhatsApp.</p>'],
+  'ajuda-trocas': ['Trocas e devoluções', '<p>Você pode desistir da compra em até 7 dias após o recebimento, conforme o Código de Defesa do Consumidor. A peça deve voltar sem uso, no estojo, com o certificado.</p><p>Ajustes de aro e trocas de tamanho são feitos pela nossa equipe. Fale com a gente pelo WhatsApp para combinar o envio.</p>'],
+  'ajuda-cuidados': ['Cuidados com a joia', '<p>Limpe com flanela seca e macia. Evite contato com perfume, cloro e produtos químicos, e tire as joias para dormir, nadar ou fazer exercício.</p><p>Guarde cada peça separada, no estojo, para não riscar as pedras e o ouro.</p>']
+};
+function viewAjuda(id){
+  var a = AJUDA[id];
+  return '<div class="wrap" style="max-width:760px;padding-block:24px 96px"><nav class="migalha" aria-label="Você está em"><a href="#inicio">Início</a><span aria-hidden="true">/</span><span>'+a[0]+'</span></nav><h1 class="serif" style="font-size:clamp(36px,4.4vw,52px);line-height:1.08;margin:18px 0 20px">'+a[0]+'</h1><div style="color:var(--cinza);display:flex;flex-direction:column;gap:4px">'+a[1]+'</div></div>';
+}
+function viewNaoEncontrado(){ return '<div class="wrap confirmado"><h1>Página não encontrada</h1><a class="btn btn-verde" href="#inicio">Voltar à loja</a></div>'; }
+
+/* ---------- roteador ---------- */
+function rota(){
+  var h = (location.hash || '').replace(/^#/,'') || 'inicio';
+  var app = $('#app'), html, depois = null, atual = 'inicio';
+  if(h === 'inicio') html = viewInicio();
+  else if(h === 'todas' || CATS.some(function(c){ return c.id === h; })){ html = viewCategoria(h); atual = h; }
+  else if(h.indexOf('p-') === 0){ html = viewProduto(h.slice(2)); depois = renderInfo; atual = porId[h.slice(2)] ? porId[h.slice(2)].categoria : ''; }
+  else if(h === 'checkout'){ html = viewCheckout(); depois = renderCheckoutDinamico; }
+  else if(h === 'pedido') html = viewPedido();
+  else if(AJUDA[h]) html = viewAjuda(h);
+  else if(h === 'sacola'){ html = viewInicio(); setTimeout(abrirSacola, 50); }
+  else html = viewNaoEncontrado();
+  app.innerHTML = html;
+  if(depois) depois();
+  document.querySelectorAll('#nav-cats a').forEach(function(a){ if(a.getAttribute('href') === '#'+atual) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  window.scrollTo(0,0);
+  if(location.hash) app.focus({preventScroll:true});
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', function(e){
+  var w = e.target.closest('[data-wa]');
+  if(w && !so(C.whatsapp)){ e.preventDefault(); toast('O WhatsApp da loja entra aqui assim que o número for cadastrado.'); return; }
+  var a = e.target.closest('[data-acao]'); if(!a) return;
+  var acao = a.getAttribute('data-acao'), i = +a.getAttribute('data-i');
+  if(a.tagName === 'SELECT') return;
+  if(acao === 'abrir-sacola') abrirSacola();
+  else if(acao === 'fechar-sacola'){ if(a.tagName !== 'A') e.preventDefault(); fecharSacola(); }
+  else if(acao === 'mais'){ sacola[i].qtd = Math.min(9, sacola[i].qtd + 1); salvarSacola(); renderSacola(); }
+  else if(acao === 'menos'){ if(sacola[i].qtd > 1) sacola[i].qtd--; else sacola.splice(i,1); salvarSacola(); renderSacola(); }
+  else if(acao === 'remover'){ sacola.splice(i,1); salvarSacola(); renderSacola(); }
+  else if(acao === 'aro'){ pe.aro = +a.getAttribute('data-n'); pe.tentou = false; renderInfo(); var b = $('[data-acao="aro"][data-n="'+pe.aro+'"]'); if(b) b.focus(); }
+  else if(acao === 'pq-mais'){ pe.qtd = Math.min(9, pe.qtd + 1); renderInfo(); }
+  else if(acao === 'pq-menos'){ pe.qtd = Math.max(1, pe.qtd - 1); renderInfo(); }
+  else if(acao === 'vista'){ pe.vista = i; document.querySelectorAll('[data-acao="vista"]').forEach(function(b,j){ b.setAttribute('aria-pressed', String(j===i)); }); }
+  else if(acao === 'acordeao'){ var s = a.getAttribute('data-s'); pe.aberta = pe.aberta === s ? null : s; renderInfo(); var nb = $('[data-acao="acordeao"][data-s="'+s+'"]'); if(nb) nb.focus(); }
+  else if(acao === 'calc-frete'){ pe.cep = mascaraCep($('#cep-prod').value); $('#cep-prod').value = pe.cep; mostrarFreteProduto(); }
+  else if(acao === 'adicionar' || acao === 'comprar'){
+    var p = porId[pe.id];
+    if(p.aro && !pe.aro){ pe.tentou = true; renderInfo(); var g = $('.aros button'); if(g) g.focus(); return; }
+    adicionar(p.id, p.aro ? pe.aro : null, pe.qtd);
+    if(acao === 'comprar') location.hash = 'checkout';
+    else { toast(p.nome + ' foi para a sacola.'); abrirSacola(); }
+  }
+});
+document.addEventListener('change', function(e){
+  var t = e.target;
+  if(t.id === 'ordem'){ ordemAtual = t.value; rota(); var o = $('#ordem'); if(o) o.focus(); }
+  if(t.name === 'frete'){ ck.frete = t.value; salvarCk(); renderCheckoutDinamico(); }
+  if(t.name === 'pag'){ ck.pag = t.value; salvarCk(); var bp = $('#bloco-parc'); if(bp) bp.hidden = ck.pag !== 'cartao'; renderCheckoutDinamico(); }
+  if(t.id === 'ck-parcelas'){ ck.parcelas = +t.value; salvarCk(); renderCheckoutDinamico(); }
+});
+document.addEventListener('input', function(e){
+  var t = e.target;
+  if(t.id === 'cep-prod'){ t.value = mascaraCep(t.value); if(so(t.value).length === 8){ pe.cep = t.value; mostrarFreteProduto(); } }
+  if(t.id && t.id.indexOf('ck-') === 0 && t.tagName === 'INPUT'){
+    var k = t.name;
+    if(k === 'cpf') t.value = mascaraCpf(t.value);
+    if(k === 'tel') t.value = mascaraTel(t.value);
+    if(k === 'cep') t.value = mascaraCep(t.value);
+    var antes = ck[k]; ck[k] = t.value; salvarCk();
+    if(t.getAttribute('aria-invalid') === 'true'){ t.setAttribute('aria-invalid','false'); var er = $('#er-'+k); if(er) er.textContent = ''; }
+    if(k === 'cep' && so(antes) !== so(t.value)) aoMudarCep();
+  }
+});
+document.addEventListener('submit', function(e){ if(e.target.id === 'form-ck'){ e.preventDefault(); enviarPedido(); } });
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && $('#sacola').classList.contains('aberta')) fecharSacola();
+  if(e.key === 'Tab' && $('#sacola').classList.contains('aberta')){
+    var f = $('#sacola').querySelectorAll('a[href],button:not([disabled])'); if(!f.length) return;
+    var pri = f[0], ult = f[f.length-1];
+    if(e.shiftKey && document.activeElement === pri){ e.preventDefault(); ult.focus(); }
+    else if(!e.shiftKey && document.activeElement === ult){ e.preventDefault(); pri.focus(); }
+  }
+});
+window.addEventListener('hashchange', rota);
+
+/* ---------- partes fixas ---------- */
+$('#previa').hidden = !C.modoPrevia;
+$('#ben-pix').textContent = pctPix + '% off no Pix';
+document.querySelectorAll('[data-trevo]').forEach(function(s){ s.innerHTML = trevoSvg(+s.getAttribute('data-trevo')); });
+var navCats = CATS.map(function(c){ return '<li><a href="#'+c.id+'">'+esc(c.nome)+'</a></li>'; }).join('');
+$('#nav-cats').innerHTML = navCats;
+$('#rod-cats').innerHTML = CATS.slice(0,4).map(function(c){ return '<a href="#'+c.id+'">'+esc(c.nome)+'</a>'; }).join('');
+$('#rod-wa').textContent = 'WhatsApp ' + C.whatsappTexto;
+$('#rod-email').textContent = C.email;
+$('#rod-horario').textContent = C.horario;
+$('#rod-insta').textContent = '@' + C.instagram; $('#rod-insta').href = 'https://instagram.com/' + C.instagram;
+$('#rod-cnpj').textContent = 'Joyelle Joias · CNPJ ' + C.cnpj;
+document.querySelectorAll('.topo [data-wa], .wa-flutuante').forEach(function(a){ a.href = waLink('Olá! Vim pelo site da Joyelle.'); });
+atualizarContador();
+rota();
+})();
+</script>
+
+</body></html>
